@@ -32,18 +32,18 @@
       type state is (strst, st1, st2, st3, st4);
       signal present_state, next_state : state;
     begin
-    synchronous_process: process (clk, rst)
+    process (clk, rst)
     begin
         if rising_edge(clk) then
             if (rst = '1') then
-                present_state <= strst;
+                present_state <= strst;        -- Reset to initial state
             else
-                present_state <= next_state;
+                present_state <= next_state;   -- State transition
             end if;
         end if;
     end process;
-
-    output_decoder : process(present_state, din1, din2)
+	-- Process for determining next state based on current state and inputs
+    process(present_state, din1, din2)
     begin
         case (present_state) is
             when strst =>
@@ -80,8 +80,8 @@
                 next_state <= strst;
         end case;
     end process;
-
-    next_state_decoder : process(present_state)
+	-- Process for output  based on current state
+    process(present_state)
     begin
         case present_state is
             when strst =>
