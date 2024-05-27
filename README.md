@@ -1,102 +1,102 @@
 # FPGA
 
 ## SwitchToLED
-
-  
+    LIBRARY ieee ;
+		USE ieee.std_logic_1164.all ;
+		ENTITY lab1_1 IS
+		PORT(mySW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+			  myLEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
+			 );
+		END lab1_1;
+		ARCHITECTURE Behavior OF lab1_1 IS
+		BEGIN
+			myLEDR <= mySW;
+		END Behavior; 
 # FSM SEQUENCE DETECTOR
 ## SEQUENCE : 00 01 11 10
 
-    library IEEE; -- This line tells the compiler where to find standard functions and definitions.
+    library IEEE;
+    use IEEE.STD_LOGIC_1164.ALL;
 
-    use IEEE.STD_LOGIC_1164.ALL; -- This line includes standard logic types and operations.
-
-    entity fsmlock is -- This declares the entity 'fsmlock' with its ports.
+    entity fsmlock is
     Port (
-         clk  : in  STD_LOGIC; -- Input port for clock signal.
-        din1 : in  STD_LOGIC; -- Input port for din1 signal.
-        din2 : in  STD_LOGIC; -- Input port for din2 signal.
-        rst  : in  STD_LOGIC; -- Input port for reset signal.
-        dout : out STD_LOGIC  -- Output port for dout signal.
-    );
+      clk  : in  STD_LOGIC;
+      din1 : in  STD_LOGIC;
+      din2 : in  STD_LOGIC;
+      rst  : in  STD_LOGIC;
+      dout : out STD_LOGIC
+      );
     end fsmlock;
 
-    architecture Behavioral of fsmlock is -- This begins the    architecture block for the entity 'fsmlock'.
-    type state is (strst, st1, st2, st3, st4); -- This defines a custom type 'state' with possible values.
-
-    signal present_state, next_state : state; -- These signals hold the current and next state values.
-
+    architecture Behavioral of fsmlock is
+      type state is (strst, st1, st2, st3, st4);
+      signal present_state, next_state : state;
     begin
-    -- Synchronous process for state transition
-    synchronous_process: process (clk, rst) -- This is a process sensitive to clk and rst signals.
+    synchronous_process: process (clk, rst)
     begin
-        if rising_edge(clk) then -- If it's a rising edge of the clock...
-            if (rst = '1') then -- If reset is active...
-                present_state <= strst; -- Set present_state to starting state.
-            else		 
-                present_state <= next_state; -- Update present_state with next_state.
-            end if;                
+        if rising_edge(clk) then
+            if (rst = '1') then
+                present_state <= strst;
+            else
+                present_state <= next_state;
+            end if;
         end if;
     end process;
 
-    -- Combinational process for state transition logic
-    output_decoder : process(present_state, din1, din2) -- This process updates next_state based on present_state and inputs.
+    output_decoder : process(present_state, din1, din2)
     begin
-        case (present_state) is  -- Based on the current state...
-            when strst => -- If in starting state...
-                if (din1 = '0'and din2= '0') then -- If both inputs are low...
-                    next_state <= st1; -- Move to state 1.
+        case (present_state) is
+            when strst =>
+                if (din1 = '0' and din2 = '0') then
+                    next_state <= st1;
                 else
-                    next_state <= strst; -- Stay in starting state.
+                    next_state <= strst;
                 end if;
-            when st1 => -- If in state 1...
-                if (din1 = '0'and din2= '1') then -- If din1 is low and din2 is high...
-                    next_state <= st2; -- Move to state 2.
+            when st1 =>
+                if (din1 = '0' and din2 = '1') then
+                    next_state <= st2;
                 else
-                    next_state <= st1; -- Stay in state 1.
+                    next_state <= st1;
                 end if;
-            when st2 => -- If in state 2...
-                if (din1 = '1'and din2= '1') then -- If both inputs are high...
-                    next_state <= st3; -- Move to state 3.
+            when st2 =>
+                if (din1 = '1' and din2 = '1') then
+                    next_state <= st3;
                 else
-                    next_state <= st2; -- Stay in state 2.
+                    next_state <= st2;
                 end if;
-            when st3 => -- If in state 3...
-                if (din1 = '1'and din2= '0') then -- If din1 is high and din2 is low...
-                    next_state <= st4; -- Move to state 4.
+            when st3 =>
+                if (din1 = '1' and din2 = '0') then
+                    next_state <= st4;
                 else
-                    next_state <= st3; -- Stay in state 3.
-                end if; 
-            when st4 => -- If in state 4...
-                if (din1 = '1'and din2= '0') then -- If din1 is high and din2 is low...
-                    next_state <= st4; -- Stay in state 4.
-                else
-                    next_state <= strst; -- Go back to starting state.
+                    next_state <= st3;
                 end if;
-            when others => -- For any other state...
-                next_state <= strst; -- Go back to starting state.
+            when st4 =>
+                if (din1 = '1' and din2 = '0') then
+                    next_state <= st4;
+                else
+                    next_state <= strst;
+                end if;
+            when others =>
+                next_state <= strst;
         end case;
-    end process; 
+    end process;
 
-    -- Combinational process for output logic
-    next_state_decoder : process(present_state) -- This process sets the output based on the current state.
+    next_state_decoder : process(present_state)
     begin
-        case present_state is  -- Based on the current state...
-            when strst => -- If in starting state...
-                dout <= '0'; -- Output low.
-            when st1 => -- If in state 1...
-                dout <= '0'; -- Output low.
-            when st2 => -- If in state 2...
-                dout <= '0'; -- Output low.
-            when st3 => -- If in state 3...
-                dout <= '0'; -- Output low.
-            when st4 => -- If in state 4...
-                dout <= '1'; -- Output high.
-            when others => -- For any other state...
-                dout <= '0'; -- Output low.
+        case present_state is
+            when strst =>
+                dout <= '0';
+            when st1 =>
+                dout <= '0';
+            when st2 =>
+                dout <= '0';
+            when st3 =>
+                dout <= '0';
+            when st4 =>
+                dout <= '1';
+            when others =>
+                dout <= '0';
         end case;
     end process;
 
     end Behavioral;
-
-
-
