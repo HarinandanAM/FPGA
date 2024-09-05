@@ -1,12 +1,6 @@
 
 # Introduction To FPGA-Field Programmable Gate Array
 
-
-  by Harinandanan A M
-
-
-
-
 ## Introduction
 
 Field Programmable Gate Arrays (FPGAs) are digital ICs (Integrated Circuits) that enable the hardware design engineer to program a customized Digital Logic as per the requirements. The term “Field Programmable” implies that the Digital Logic of the IC is not fixed during its manufacturing (or fabrication) but rather it is programmed by the end-user (designer).
@@ -15,7 +9,9 @@ FPGA is a type of Programmable logic devices (PLD).
 
 PLD is an IC containing a large number of Logic gates ( arrays of AND gates & OR gates) and Flip-flops that can be configured by the user to implement a wide variety of functions.
 
-  ![Picture1](https://github.com/user-attachments/assets/03daf76b-b96f-454b-ae42-01e7f92dc260)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/03daf76b-b96f-454b-ae42-01e7f92dc260" width="300"/>
+</div>
 
 
 Basically, PLDs can be categorized into three types. 
@@ -33,7 +29,11 @@ In which FPGA’s are the most complex PLD.
 
 ## Architecture
 
-![image](https://github.com/user-attachments/assets/89918a17-eb11-4c45-9f6b-f86d9cf58a68)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/89918a17-eb11-4c45-9f6b-f86d9cf58a68" width="300"/>
+</div>
+
+
 
 
 The fpga is made up of numerous Configurable Logic blocks (CLB) which are surrounded by a system of programmable interconnects known as a fabric, they directs signal between CLBs and I/O blocks.
@@ -50,7 +50,10 @@ As we can see FPGA consists of three basic components. They are:
 
 A configurable logic block (CLB) is the basic repeating logic resource on an FPGA. When linked together by Programmable Interconnects, the components in CLBs execute complex logic functions, implement memory functions, and synchronize code on the FPGA.
                            	
-![image](https://github.com/user-attachments/assets/a176b885-afd6-4a03-b35e-86ffc7fa79e1)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a176b885-afd6-4a03-b35e-86ffc7fa79e1" width="300"/>
+</div>
 
 
 CLBs contain smaller components, including
@@ -62,8 +65,8 @@ CLBs contain smaller components, including
 
 Flip-flops are binary shift registers used to synchronize logic and save logical states between clock cycles within an FPGA circuit. On every clock edge, a flip-flop latches the 1 or 0 (TRUE or FALSE) value on its input and holds that value constant until the next clock edge. There are different types of flip flops, the one that is used most frequently is the D Flip-Flop.
 
-![image](https://github.com/user-attachments/assets/10e6c150-b5d4-47df-b266-18689cf120c5)
 
+<img src="https://github.com/user-attachments/assets/10e6c150-b5d4-47df-b266-18689cf120c5" width="100"/>
         
 S    Set pin
 R    Reset pin
@@ -71,12 +74,12 @@ D    Data Input to Flip-Flop
 Q    Data Output of Flip-Flop (Registered)
 >    Clock Input to Flip-Flop
 
-
-![image](https://github.com/user-attachments/assets/588967d7-1e53-4bf8-b15e-3ce0de3e46b9)
-
+  <img src="https://github.com/user-attachments/assets/588967d7-1e53-4bf8-b15e-3ce0de3e46b9" width="300"/>
+  
 The clock is what allows a Flip-Flop to be used as a data storage element. Any data storage elements are known as sequential logic or registered logic. Sequential logic operates on the transitions of a clock. 99.9% of the time this will be the rising edge (when the clock goes from 0 to 1). When a Flip-Flop sees a rising edge of the clock, it registers the data from the Input D to the Output Q. Flip-Flops are what make complex FPGAs possible! Let’s look at a waveform of a few events.
            
-![image](https://github.com/user-attachments/assets/f55c1eb4-9336-41f0-9c1c-bca575f9600b)
+
+  <img src="https://github.com/user-attachments/assets/f55c1eb4-9336-41f0-9c1c-bca575f9600b" width="300"/>
 
 
 ## Look-up Tables
@@ -85,8 +88,7 @@ A collection of gates hardwired on the FPGA.The LUT is the basic building block 
 
 LUTs can come in different sizes depending on the FPGA that you are using, but they all behave the same way. 3-Input LUTs were the norm not too long ago, but today 4-Input and even 5-Input LUTs are common. If you need to make a more complicated expression, you can just use more Look-Up Tables. LUTs are one of the two most fundamental components in an FPGA. A single FPGA has thousands of these components. Now that you are more familiar with these 
                      
-
-![image](https://github.com/user-attachments/assets/56a1e545-93c4-4ad7-8bf1-dccc5a6ae518)
+ <img src="https://github.com/user-attachments/assets/56a1e545-93c4-4ad7-8bf1-dccc5a6ae518" width="300"/>
 
 
 ## Multiplexer
@@ -94,7 +96,7 @@ LUTs can come in different sizes depending on the FPGA that you are using, but t
 A circuit that selects between two or more inputs and then returns the selected input.
 Multiplexers are used all the time in FPGAs in various sizes and configurations. This image shows what a 2 to 1 mux looks like symbolically. The inputs to the mux are A, B, sel, the output is out. A and B are the Data inputs that get selected to the output. sel is your control signal. Muxes can come in all possible combinations, depending on your particular use case. Typically, some number of inputs are selected to a single output. However the reverse could be true and it would still be a mux.
 
-![image](https://github.com/user-attachments/assets/7423fcd8-0682-4060-922b-39130db3dfbb)
+ <img src="https://github.com/user-attachments/assets/7423fcd8-0682-4060-922b-39130db3dfbb" width="300"/>
 
                                                 
 
@@ -103,8 +105,8 @@ Multiplexers are used all the time in FPGAs in various sizes and configurations.
 
 Block RAM (BRAM) is a type of random access memory embedded throughout an FPGA for data storage. The two types of BRAM memories available in a device can hold either 18k or 36k bits, and the available amount of these memories is device specific.
 
-![image](https://github.com/user-attachments/assets/ae26089f-559a-4d5e-8341-8f395425316c)
-       
+ <img src="https://github.com/user-attachments/assets/ae26089f-559a-4d5e-8341-8f395425316c" width="300"/>
+
 FIFO means First In First Out and they are used all over the place in FPGA design. Any time you need to buffer some data between two interfaces you’ll use a FIFO. Or if you want to cross clock domains, or if you want to buffer a row of image data and manipulate it, or if you want to send data off-chip to a DDR memory (a high-speed dynamic random-access memory), these all require the use of a Block RAM FIFO.
 
 ## DSP Slices 
