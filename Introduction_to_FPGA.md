@@ -1,16 +1,4 @@
-Introduction To                      FPGA-Field Programmable Gate Array
-
-
-
-
-
-
-
-
-
-
-
-
+# Introduction To FPGA-Field Programmable Gate Array
 
 
 Harinandanan A M
@@ -18,7 +6,7 @@ S2 BTech ECE
 
 
 
-Introduction
+## Introduction
 
 Field Programmable Gate Arrays (FPGAs) are digital ICs (Integrated Circuits) that enable the hardware design engineer to program a customized Digital Logic as per the requirements. The term “Field Programmable” implies that the Digital Logic of the IC is not fixed during its manufacturing (or fabrication) but rather it is programmed by the end-user (designer).
 
@@ -42,7 +30,7 @@ In which FPGA’s are the most complex PLD.
 
 
 
-Architecture
+## Architecture
 
 The fpga is made up of numerous Configurable Logic blocks (CLB) which are surrounded by a system of programmable interconnects known as a fabric, they directs signal between CLBs and I/O blocks.
 
@@ -61,7 +49,7 @@ CLBs contain smaller components, including
 •	look-up tables (LUTs)
 •	 multiplexers.
 
-Flip Flop
+## Flip Flop
 
 Flip-flops are binary shift registers used to synchronize logic and save logical states between clock cycles within an FPGA circuit. On every clock edge, a flip-flop latches the 1 or 0 (TRUE or FALSE) value on its input and holds that value constant until the next clock edge. There are different types of flip flops, the one that is used most frequently is the D Flip-Flop.
                                             
@@ -76,7 +64,7 @@ The clock is what allows a Flip-Flop to be used as a data storage element. Any d
            
                      
 
-Look-up Tables
+## Look-up Tables
 
 A collection of gates hardwired on the FPGA.The LUT is the basic building block of an FPGA and is capable of implementing any logic function of N Boolean variables. Essentially, this element is a truth table in which different combinations of the inputs implement different functions to yield output values. 
 
@@ -93,7 +81,7 @@ LUTs can come in different sizes depending on the FPGA that you are using, but t
 
 
 
-Multiplexer
+## Multiplexer
 
 A circuit that selects between two or more inputs and then returns the selected input.
 Multiplexers are used all the time in FPGAs in various sizes and configurations. This image shows what a 2 to 1 mux looks like symbolically. The inputs to the mux are A, B, sel, the output is out. A and B are the Data inputs that get selected to the output. sel is your control signal. Muxes can come in all possible combinations, depending on your particular use case. Typically, some number of inputs are selected to a single output. However the reverse could be true and it would still be a mux.
@@ -102,7 +90,7 @@ Multiplexers are used all the time in FPGAs in various sizes and configurations.
                                                 
 
 
-BRAM
+## BRAM
 
 Block RAM (BRAM) is a type of random access memory embedded throughout an FPGA for data storage. The two types of BRAM memories available in a device can hold either 18k or 36k bits, and the available amount of these memories is device specific.
 
@@ -111,13 +99,13 @@ Block RAM (BRAM) is a type of random access memory embedded throughout an FPGA f
 
 FIFO means First In First Out and they are used all over the place in FPGA design. Any time you need to buffer some data between two interfaces you’ll use a FIFO. Or if you want to cross clock domains, or if you want to buffer a row of image data and manipulate it, or if you want to send data off-chip to a DDR memory (a high-speed dynamic random-access memory), these all require the use of a Block RAM FIFO.
 
-DSP Slices 
+## DSP Slices 
 
 A DSP slice, or sometimes referred to as a block or cell, is one of the specialized components in an FPGA. It carries out digital signal processing functions, like filtering or multiplying, more efficiently than using many CLBs. This multiplier circuitry saves on LUT and flip-flop usage in math and signal processing applications.
 
 
 
-Transceivers
+## Transceivers
 
 Transceivers are made to transmit and receive serial data to and from the FPGA at high rates. This dedicated component allows for implementation of high-speed data transfer without consuming logic resources of the FPGA.
 IO Blocks
@@ -130,7 +118,7 @@ Hardware description language is used to assemble these FPGA building blocks int
 Microcontroller VS FPGA
 
  
-Applications
+## Applications
 
 FPGA chips are used in both wired and wireless communications. In wired communications it is used in serial backplanes, and wireless communications, it is used for networking solutions and addressing standards of WiMAX and, 5G/6G and HSDPA. FPGA are used in the infrastructure side helping with crunching data in high speed.
  
@@ -144,7 +132,7 @@ As FPGA is used for reconfigurations and keeping up with modifications, it reduc
  
 In fact, FPGAs are being used prominently to develop deep neural networks or DNNs which will ultimately lead to the production and maintenance of artificially intelligent systems. High performance FPGAs can be of even greater help an application as when compared with GPUs, and are thus preferred for the purposes of developing machine learning technology.
 
-Reference
+## Reference
 
 National Instruments- https://www.ni.com/
 Nandland- https://nandland.com/
