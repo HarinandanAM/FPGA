@@ -11,7 +11,7 @@ Port (
 );
 end fsmlock;
 
-architecture Behavioral of fsmlock is .
+architecture Behavioral of fsmlock is 
 type state is (strst, st1, st2, st3, st4);             -- This defines a custom type 'state' with possible values.
 
 signal present_state, next_state : state;              -- These signals hold the current and next state values.
