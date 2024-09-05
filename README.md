@@ -43,6 +43,9 @@ In which FPGA’s are the most complex PLD.
 
 
 
+
+
+
 The fpga is made up of numerous Configurable Logic blocks (CLB) which are surrounded by a system of programmable interconnects known as a fabric, they directs signal between CLBs and I/O blocks.
 
                            
