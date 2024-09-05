@@ -96,7 +96,7 @@ LUTs can come in different sizes depending on the FPGA that you are using, but t
 A circuit that selects between two or more inputs and then returns the selected input.
 Multiplexers are used all the time in FPGAs in various sizes and configurations. This image shows what a 2 to 1 mux looks like symbolically. The inputs to the mux are A, B, sel, the output is out. A and B are the Data inputs that get selected to the output. sel is your control signal. Muxes can come in all possible combinations, depending on your particular use case. Typically, some number of inputs are selected to a single output. However the reverse could be true and it would still be a mux.
 
- <img src="https://github.com/user-attachments/assets/7423fcd8-0682-4060-922b-39130db3dfbb" width="300"/>
+ <img src="https://github.com/user-attachments/assets/7423fcd8-0682-4060-922b-39130db3dfbb" width="100"/>
 
                                                 
 
@@ -105,7 +105,7 @@ Multiplexers are used all the time in FPGAs in various sizes and configurations.
 
 Block RAM (BRAM) is a type of random access memory embedded throughout an FPGA for data storage. The two types of BRAM memories available in a device can hold either 18k or 36k bits, and the available amount of these memories is device specific.
 
- <img src="https://github.com/user-attachments/assets/ae26089f-559a-4d5e-8341-8f395425316c" width="300"/>
+ <img src="https://github.com/user-attachments/assets/ae26089f-559a-4d5e-8341-8f395425316c" width="800"/>
 
 FIFO means First In First Out and they are used all over the place in FPGA design. Any time you need to buffer some data between two interfaces you’ll use a FIFO. Or if you want to cross clock domains, or if you want to buffer a row of image data and manipulate it, or if you want to send data off-chip to a DDR memory (a high-speed dynamic random-access memory), these all require the use of a Block RAM FIFO.
 
