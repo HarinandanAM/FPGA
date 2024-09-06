@@ -1,6 +1,7 @@
     const int clockPin = 2;                        // Pin for clock signal
     const int dataPin = 5;                         // Pin for data signal
-    void setup() {
+                                                   // In this code the clock is created instead of specifying a baudrate, 
+    void setup() {                                 //   this clock is sent to fpga for synchronisation. 
     pinMode(clockPin, OUTPUT);
     pinMode(dataPin, OUTPUT);
     Serial.begin(9600);
